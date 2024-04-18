@@ -42,7 +42,7 @@ class OrderType extends AbstractType
                 'disabled' => true,
             ])
             ->add('create_order', SubmitType::class, [
-                'label' => 'Create Order'
+                'label' => 'Ask Order Assistant'
             ])
             ->add('place_order', SubmitType::class, [
                 'label' => 'Place Order',

@@ -11,20 +11,16 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 readonly class OrderFormBuilder
 {
-    private string $dataDirectory;
-
     public function __construct(
         private FormFactoryInterface $formFactory,
         private SerializerInterface  $serializer,
-        private string $projectDir,
-    ) {
-        $this->dataDirectory = $projectDir . '/data/menu';
-    }
+        private string $dataDirectory,
+    ) {}
 
     public function createOrderForm(): FormInterface
     {
         $starterChoices = $this->getCsvChoices('starter.csv');
-        $mainCourseChoices = $this->getCsvChoices('main_course.csv');
+        $mainCourseChoices = $this->getCsvChoices('main-course.csv');
         $dessertChoices = $this->getCsvChoices('dessert.csv');
 
         $options = [];
@@ -37,7 +33,7 @@ readonly class OrderFormBuilder
 
     private function getCsvChoices(string $filename): array
     {
-        $csvData = file_get_contents($this->dataDirectory . '/' . $filename);
+        $csvData = file_get_contents($this->dataDirectory . '/menu/' . $filename);
         return $this->serializer->decode($csvData, 'csv');
     }
 }

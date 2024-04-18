@@ -4,77 +4,25 @@ h1 {
 }
 
 .form-container {
-    max-width: 600px; /* Narrows the form */
-    margin: 0 auto; /* Centers the form horizontally */
-    padding: 40px; /* Increased padding for more space inside the container */
-    background-color: #f9f9f9; /* Light grey background */
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 10px; /* Curved corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 .form-group {
     margin-bottom: 15px; /* Space between form groups */
 }
 
-.form-control,
-.form-select {
-    display: block;
-    width: 100%; /* Full width controls */
-    padding: 10px;
-    font-size: 16px; /* Larger font size for better readability */
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-primary:hover {
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
-}
-
-.flash-message {
-    position: relative;
-    padding: 15px;
+h3 {
+    text-align: center;
     margin-bottom: 20px;
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 12px 16px;
-    color: #000;
-    font-weight: bold;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #999;
+ul {
+    list-style-type: none;
 }
