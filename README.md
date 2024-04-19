@@ -1,51 +1,43 @@
-# Symfony Docker
+# Byte to Eat
 
-A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony](https://symfony.com) web framework,
-with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) inside!
+A basic example of how Generative AI can be used to power features in PHP applications, using the OpenAI API.
 
-![CI](https://github.com/dunglas/symfony-docker/workflows/CI/badge.svg)
+The app is built using Symfony and Bootstrap, and is based on the [Symfony Docker](https://github.com/dunglas/symfony-docker) skeleton.
+It uses the [openai-php client](https://github.com/openai-php/client) to talk to OpenAI.
 
 ## Getting Started
 
-1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
-2. Run `docker compose build --no-cache` to build fresh images
-3. Run `docker compose up --pull always -d --wait` to start the project
-4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `docker compose down --remove-orphans` to stop the Docker containers.
+### Prerequisites
 
-## Features
+1. [Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
+2. An [OpenAI](https://platform.openai.com/) developer account
 
-* Production, development and CI ready
-* Just 1 service by default
-* Blazing-fast performance thanks to [the worker mode of FrankenPHP](https://github.com/dunglas/frankenphp/blob/main/docs/worker.md) (automatically enabled in prod mode)
-* [Installation of extra Docker Compose services](docs/extra-services.md) with Symfony Flex
-* Automatic HTTPS (in dev and prod)
-* HTTP/3 and [Early Hints](https://symfony.com/blog/new-in-symfony-6-3-early-hints) support
-* Real-time messaging thanks to a built-in [Mercure hub](https://symfony.com/doc/current/mercure.html)
-* [Vulcain](https://vulcain.rocks) support
-* Native [XDebug](docs/xdebug.md) integration
-* Super-readable configuration
+### Running The App
 
-**Enjoy!**
+1. Copy the `.env` file to `.env.local` and enter your API credentials
+2. Run `docker compose up -d` to pull the image and start the container
+3. Open https://localhost and [accept the auto-generated TLS certificate](https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate/15076602#15076602)
+4. Start ordering some food!*
 
-## Docs
+*this is not a real restaurant and any food is subsequently received it is purely coincidental
 
-1. [Options available](docs/options.md)
-2. [Using Symfony Docker with an existing project](docs/existing-project.md)
-3. [Support for extra services](docs/extra-services.md)
-4. [Deploying in production](docs/production.md)
-5. [Debugging with Xdebug](docs/xdebug.md)
-6. [TLS Certificates](docs/tls.md)
-7. [Using MySQL instead of PostgreSQL](docs/mysql.md)
-8. [Using Alpine Linux instead of Debian](docs/alpine.md)
-9. [Using a Makefile](docs/makefile.md)
-10. [Updating the template](docs/updating.md)
-11. [Troubleshooting](docs/troubleshooting.md)
+## How To Use
 
-## License
+Byte to Eat is a fictional (!) restaurant where you are waited on by an AI assistant.
+The app presents you with a form with options for your starter, main course, and dessert. 
+However, rather than manually clicking and selecting your choices (because who has time for that??),
+instead you type your request into the order field and the assistant will fill in the form for you.
 
-Symfony Docker is available under the MIT License.
+Because the intention is that the form is automatically filled, the select fields in the form are disabled. But since
+this means that you're unable to see the options, the menu is printed for you underneath the form.
 
-## Credits
+### Placing an order
 
-Created by [Kévin Dunglas](https://dunglas.dev), co-maintained by [Maxime Helias](https://twitter.com/maxhelias) and sponsored by [Les-Tilleuls.coop](https://les-tilleuls.coop).
+1. Enter your request in the "What would you like to order?" field, e.g.
+```
+I'd like the calamari, cheese burger, and ice cream, please! 
+```
+2. Click the "Ask Order Assistant" button and your choices will be automatically populated
+3. Your choices can be subsequently changed by submitting further requests to the Order Assistant
+4. Any messages assistant needs to give you will be displayed above the form each time a request is submitted
+5. Once you're happy with your selection, click the "Place Order" button - reset the conversation thread so you can start a new order from scratch
