@@ -40,4 +40,4 @@ I'd like the calamari, cheese burger, and ice cream, please!
 2. Click the "Ask Order Assistant" button and your choices will be automatically populated
 3. Your choices can be subsequently changed by submitting further requests to the Order Assistant
 4. Messages from the assistant will be displayed above the form each time a request is submitted
-5. Once you're happy with your selection, click the "Place Order" button - reset the conversation thread so you can start a new order from scratch
+5. Once you're happy with your selection, click the "Place Order" button - this will reset the conversation thread so you can start a new order from scratch
