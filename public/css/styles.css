@@ -26,3 +26,7 @@ h3 {
 ul {
     list-style-type: none;
 }
+
+.menu {
+    max-width: 700px;
+}
