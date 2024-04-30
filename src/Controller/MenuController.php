@@ -29,7 +29,7 @@ class MenuController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($form->get('create_order')->isClicked()) {
+            if ($form->get('ask_order_assistant')->isClicked()) {
                 try {
                     $form = $this->handleCreateOrder($form, $session);
                 } catch (\Throwable) {
