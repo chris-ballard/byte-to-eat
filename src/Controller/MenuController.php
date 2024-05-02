@@ -38,7 +38,7 @@ class MenuController extends AbstractController
             }
 
             if ($form->get('place_order')->isClicked()) {
-                $form = $this->handlePlaceOrder($form, $session);
+                $form = $this->handlePlaceOrder($session);
             }
         }
 
@@ -82,7 +82,7 @@ class MenuController extends AbstractController
         return $updatedForm;
     }
 
-    private function handlePlaceOrder(FormInterface $form, SessionInterface $session): FormInterface
+    private function handlePlaceOrder(SessionInterface $session): FormInterface
     {
         $this->addFlash('success', 'Thank you for your order - enjoy your meal!');
         $session->set('messages', []);
